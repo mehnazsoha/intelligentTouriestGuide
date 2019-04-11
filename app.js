@@ -39,7 +39,7 @@ app.use(session({
 	secret: 'secret',
 	resave: true,
 	saveUninitialized: true
-})); //express-session
+})); //express-session(flash connect dite hole must express-session connect korte hobe)
 
 //passport middleware
 app.use(passport.initialize());
@@ -61,5 +61,5 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index')); //routes
 app.use('/users', require('./routes/users')); //routes
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+const PORT = process.env.PORT || 5000; //ae line er bodole app.listen(5000); likhleo hoto
+app.listen(PORT, console.log(`Server started on port ${PORT}`)); //app.listen(5000, ()=>{console.log("Server started on port 5000");});  print korte cele jst ae tuku dilei hoto

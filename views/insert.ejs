@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand"><i class="fa fa-briefcase fa-1x"></i>TourDe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/insert">Insert <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Update</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Delete</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Logout</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+</nav>
+
+<div class="row mt-5">
+	<div class="col-md-6 m-auto">
+		<div class="card card-body">
+			<h1 class="text-center mb-3">
+				<i class="fa fa-user-secret"></i> Admin Control Panel
+			</h1>
+			<% include ./partials/messages %>
+			<form action="/insert" method="POST">
+				<div class="form-group">
+					<label for="place">Place Name</label>
+					<input type="text" id="name" name="place" class="form-control" placeholder="Enter Place Name" />
+				</div>
+				<div class="form-group">
+					<label for="country">Country Name</label>
+					<input type="name" id="name" name="country" class="form-control" placeholder="Enter Country Name" />
+                </div>
+				<div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="5" placeholder="Enter Place's Description"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="file" class="form-control-file" id="image" name="image" aria-describedby="fileHelp">
+                  <small id="fileHelp" class="form-text text-muted">Please add an image</small>
+                </div>
+				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-plus-square"></i>
+					Insert
+                </button>
+                <!-- 
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit"></i>
+					Update
+                </button>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-trash"></i>
+					Delete
+                </button>
+                -->
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row mt-5"></div>
+<footer class="page-footer font-small fixed-bottom">
+	<div class="footer-copyright text-center py-3">&copy;2019 Copyright: TourDe</div>
+</footer>

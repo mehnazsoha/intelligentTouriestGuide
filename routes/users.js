@@ -37,9 +37,9 @@ router.post('/register', (req, res) => {
 	//checking passwords match
 
 	//checking password length
-	if (password.length < 8) {
+	if (password.length < 4) {
 		errors.push({
-			msg: 'Password should be at least 8 characters'
+			msg: 'Password should be at least 4 characters'
 		});
 	}
 	//checking password length
@@ -103,7 +103,7 @@ router.post('/register', (req, res) => {
 //login handle
 router.post('/login', (req, res, next) => {
 	passport.authenticate('local', {
-		successRedirect: '/dashboard', //home page link korte hobe
+		successRedirect: '/insert', 
 		failureRedirect: '/users/login',
 		failureFlash: true
 	})(req, res, next);
@@ -111,9 +111,9 @@ router.post('/login', (req, res, next) => {
 //login handle
 
 //logout handle
-router.get('/logout',(req,res)=>{
+router.get('/logout', (req, res) => {
 	req.logout();
-	req.flash('success_msg','You are logged out');
+	req.flash('success_msg', 'You are logged out');
 	res.redirect('/users/login');
 });
 //logout handle
