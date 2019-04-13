@@ -12,9 +12,6 @@ const adminSchema = new mongoose.Schema({
 	},
 	description: { 
 		type: String
-	},
-	image: {
-		type: mongoose.Schema.Types.Mixed
 	}
 });
 

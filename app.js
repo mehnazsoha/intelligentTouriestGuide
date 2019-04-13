@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+// const exphbs=require('express-handlebars');
+// const path=require('path');
 
 const app = express();
 
@@ -30,6 +32,12 @@ mongoose.connect(db, {
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 //connect EJS
+
+// //connect handlebars
+// app.set('place', path.join(__dirname, '/place/'));  //views folder ta join korar jno
+// app.engine('hbs',exphbs({extname: 'hbs', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/place/layouts/'}));
+// app.set('view engine','hbs');
+// //connect handlebars
 
 app.use(express.urlencoded({
 	extended: false
