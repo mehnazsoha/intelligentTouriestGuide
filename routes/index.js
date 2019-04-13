@@ -8,7 +8,7 @@ const Admin = require('../models/Admin'); //admin model
 
 router.get('/', (req, res) => res.render('welcome')); //welcome page
 router.get('/insert', ensureAuthenticated, (req, res) => res.render('insert')); //insert page
-//router.get('/list', ensureAuthenticated, (req, res) => res.render('list')); //insert page
+router.get('/list', ensureAuthenticated, (req, res) => res.render('list')); //insert page
 
 //save handle
 router.post('/insert', (req, res) => {
